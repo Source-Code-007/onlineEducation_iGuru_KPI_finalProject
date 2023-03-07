@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iGuru</title>
+  <link rel="shortcut icon" type="image/x-icon" href="./assets/img/counterImgOne.png">
+  <!-- Google Font CDN -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <!-- Font awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- OWL Carousel CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  <!-- Taiwind & Daisy UI CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.50.1/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- custom CSS -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <!-- default preloader -->
+  <div id="preloader"></div>
+  <!-- cmn indicator bar -->
+  <div id="indicator-bar" class="bg-orange-500"></div>
+  <!-- topbar button -->
+  <button id="back-to-top"
+    class="fixed bottom-5 right-5 bg-orange-500 opacity-50 hover:opacity-90 transition shadow-lg text-slate-50 h-10 w-10 inline-block rounded-full text-2xl group">
+    <i class="fa-solid fa-arrow-up group-hover:-translate-y-1 transition duration-500"></i></button>
+
+
+  <!-- Navbar -->
+  <header>
+    <nav
+      class="navbar bg-transparent backdrop-filter backdrop-blur-md text-neutral-content fixed top-0 left-0 w-full z-50 shadow-lg">
+      <div class="navbar-start">
+        <div class="dropdown">
+          <label tabindex="0" class="btn btn-ghost lg:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+            </svg>
+          </label>
+          <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+            <li><a>Item 1</a></li>
+            <li tabindex="0">
+              <a class="justify-between">
+                Parent
+                <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+                </svg>
+              </a>
+              <ul class="p-2">
+                <li><a>Submenu 1</a></li>
+                <li><a>Submenu 2</a></li>
+              </ul>
+            </li>
+            <li><a>Item 3</a></li>
+          </ul>
+        </div>
+        <a class="btn btn-ghost normal-case w-36"><img src="./assets/img/logo-light.png" alt=""></a>
+      </div>
+
+      <div class="navbar-center hidden lg:flex">
+        <ul class="menu menu-horizontal px-1">
+          <li class><a>Home</a></li>
+          <li tabindex="0">
+            <a>
+              Pages
+              <span><i class="fa-solid fa-plus"></i></span>
+            </a>
+            <ul class="p-2 bg-orange-500">
+              <li><a>Submenu 1</a></li>
+              <li><a>Submenu 2</a></li>
+            </ul>
+          </li>
+          <li tabindex="0">
+            <a>
+              Contact us
+              <span><i class="fa-solid fa-plus"></i></span>
+            </a>
+            <ul class="p-2 bg-orange-500">
+              <li><a>Submenu 1</a></li>
+              <li><a>Submenu 2</a></li>
+            </ul>
+          </li>
+          <li tabindex="0">
+            <a>
+              Blog
+              <span><i class="fa-solid fa-plus"></i></span>
+            </a>
+            <ul class="p-2 bg-orange-500">
+              <li><a>Submenu 1</a></li>
+              <li><a>Submenu 2</a></li>
+            </ul>
+          </li>
+          <li><a href="./quiz.html">Quiz</a></li>
+          <li><a href="#footer">Footer</a></li>
+        </ul>
+      </div>
+
+      <div class="navbar-end">
+        <label class="btn btn-circle swap swap-rotate">
+
+          <!-- this hidden checkbox controls the state -->
+          <input type="checkbox" />
+
+          <!-- hamburger icon -->
+          <svg class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+            viewBox="0 0 512 512">
+            <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
+          </svg>
+
+          <!-- close icon -->
+          <svg class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+            viewBox="0 0 512 512">
+            <polygon
+              points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" />
+          </svg>
+
+        </label>
+        <button class="btn btn-ghost btn-circle">
+          <div class="indicator">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+            </svg>
+            <span class="badge badge-xs badge-primary indicator-item"></span>
+          </div>
+        </button>
+      </div>
+    </nav>
+
+    <div class="carousel w-full h-screen relative">
+
+      <div id="slide1"
+        class="carousel-item relative w-full bg-[url('./assets/img/banner-one.jpg')] bg-center bg-cover bg-slate-700 bg-blend-overlay bg-fixed flex items-center justify-center">
+
+        <div class="slider-1-inner space-y-3 max-w-7xl mx-10 md:mx-0">
+          <div class="relative apply-animated-from-left opacity-0">
+            <h1 class="text-4xl font-semibold pl-3 text-slate-50">Fuel Your Future</h1>
+            <div class="absolute top-0 left-0 h-full w-1 bg-orange-500"></div>
+          </div>
+          <h2
+            class="text-6xl font-bold cmn-gradient-three text-transparent bg-clip-text hover:bg-clip-text py-2 apply-animated-from-right opacity-0">
+            Education anywhere by</h2>
+          <div class="apply-animated-from-left opacity-0">
+            <img src="./assets/img/mouse-img.png" class="inline-block w-28" alt="">
+            <span
+              class="text-5xl font-semibold absolute left-16 top-14 cmn-gradient-one text-transparent bg-clip-text">nline
+              class</span>
+          </div>
+          <div class="space-x-3 apply-animated-from-right opacity-0">
+            <a href="#video-section" class="btn rounded-tl-3xl cmn-gradient-three slideBtn border-none">Quick
+              Summary</a>
+            <a href="./quiz.html" class="btn rounded-tl-3xl cmn-gradient-one slideBtn border-none">Take Quiz</a>
+          </div>
+        </div>
+
+        <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <a href="#slide2" class="btn btn-circle">❮</a>
+          <a href="#slide2" class="btn btn-circle">❯</a>
+        </div>
+      </div>
+
+      <div id="slide2"
+        class="carousel-item relative w-full bg-[url('./assets/img/wood-BG.jpg')] bg-center bg-cover bg-slate-700 bg-blend-overlay flex items-center justify-center">
+
+        <div class="slider-2-inner space-y-3 max-w-7xl mx-10 md:mx-0">
+          <div class="relative apply-animated-from-left opacity-0">
+            <h1 class="text-4xl font-semibold pl-3 text-slate-50">Learn Anything</h1>
+            <div class="absolute top-0 left-0 h-full w-1 bg-orange-500"></div>
+          </div>
+          <h2
+            class="text-6xl font-bold cmn-gradient-three text-transparent bg-clip-text hover:bg-clip-text py-2 apply-animated-from-right opacity-0">
+            More than 300+ Courses</h2>
+          <p class="font-semibold text-xl text-slate-50 apply-animated-from-left">Get Access For Award Winning Online
+            Course</p>
+          <div class="space-x-3 apply-animated-from-right opacity-0">
+            <a class="btn rounded-tl-3xl cmn-gradient-three slideBtn border-none">View Course</a>
+            <a href="#video-section" class="btn rounded-tl-3xl cmn-gradient-one slideBtn border-none">Explore Academy</a>
+          </div>
+        </div>
+
+        <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <a href="#slide1" class="btn btn-circle">❮</a>
+          <a href="#slide1" class="btn btn-circle">❯</a>
+        </div>
+      </div>
+
+      <div class="bubble h-5 w-5 opacity-60"></div>
+      <div class="bubble h-7 w-7 bg-green-500"></div>
+      <div class="bubble h-10 w-10 opacity-50 bg-red-500"></div>
+      <div class="bubble h-10 w-10 opacity-40 bg-yellow-500"></div>
+      <div class="bubble h-20 w-20 opacity-30 bg-blue-500"></div>
+      <div class="bubble h-20 w-20 opacity-50 bg-slate-800"></div>
+      <div class="bubble h-4 w-4 opacity-60 bg-slate-200"></div>
+    </div>
+  </header>
+
+  <!-- why we are -->
+  <section class="why-we-are relative py-16">
+    <div class="container max-w-7xl mx-auto px-5 xl:px-0">
+
+      <div class="why-we-are-intro 5/6 md:4/6 lg:w-3/6 mx-auto text-center mb-12 space-y-3">
+        <h2 class="text-2xl md:text-3xl lg:text-5xl font-bold">Know Why We Are Best</h2>
+        <p class="text-lg text-slate-600">LEARNING VIA APP NEVER GETS EASIER</p>
+      </div>
+
+      <div class="why-we-are-inner">
+        <div class="why-we-are-btn select-none flex justify-between gap-6 w-3/6 mx-auto text-center mb-16">
+          <span class="why-we-are-btn-one text-xl text-orange-500 font-semibold cursor-pointer">Creating a better future
+            for you</span>
+          <span class="why-we-are-btn-two text-xl text-slate-400 font-semibold cursor-pointer">Learn why iGuru is
+            best</span>
+          <span class="why-we-are-btn-three text-xl text-slate-400 font-semibold cursor-pointer">Our simple and
+            effective process</span>
+        </div>
+
+        <div class="why-we-are-item-one grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div class="space-y-7">
+            <h2 class="text-4xl font-bold">The Prodigious eLearning Courses for you</h2>
+            <p class="text-xl text-slate-500 font-semibold">Sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt. Labore et dolore magna aliqua.
+              Ut enim ad minim veniam, quis nostrud exercitation.</p>
+            <ul class="space-y-2">
+              <li class="text-slate-500 text-lg"> <span class="text-orange-500 text-2xl mr-2"><i
+                    class="fa-regular fa-lightbulb w-10 text-center"></i></span> Creativity study plan</li>
+              <li class="text-slate-500 text-lg"> <span class="text-orange-500 text-2xl mr-2"><i
+                    class="fa-solid fa-jet-fighter-up w-10 text-center"></i></span>Quick Crash Courses</li>
+              <li class="text-slate-500 text-lg"> <span class="text-orange-500 text-2xl mr-2"><i
+                    class="fa-solid fa-vial w-10 text-center"></i></span>Provided with Experimental Examples</li>
+              <li class="text-slate-500 text-lg"> <span class="text-orange-500 text-2xl mr-2"><i
+                    class="fa-solid fa-award w-10 text-center"></i></span>Certification Awarded</li>
+            </ul>
+            <button class="btn rounded-tl-3xl cmn-gradient-three slideBtn border-none">Discover New Course</button>
+          </div>
+          <div class="flex gap-5 ">
+            <img src="./assets/img/why-are-we-tabOneImgOne.jpg" class="w-3/6 rounded-lg" alt="">
+            <img src="./assets/img/why-are-we-tabOneImgTwo.jpg" class="w-3/6 rounded-lg translate-y-12" alt="">
+          </div>
+        </div>
+
+        <div class="why-we-are-item-two hidden grid-cols-1 lg:grid-cols-2 gap-8">
+          <div class="space-y-7">
+            <h2 class="text-4xl font-bold">Learn New Skills, Advance Your Career</h2>
+            <p class="text-xl text-slate-500 font-semibold">Iguru has a first rate academic program, a fully qualified.
+              With over 50 years of experience teaching English around the world, we know that no two learners are the
+              same. That’s why we tailor our course to your learning level, motivations and lifestyle. Set your level!
+            </p>
+            <ul class="space-y-2">
+              <li class="text-slate-500 text-lg"> <span class="text-orange-500 text-2xl mr-2"><i
+                    class="fa-regular fa-lightbulb w-10 text-center"></i></span> Creativity study plan</li>
+              <li class="text-slate-500 text-lg"> <span class="text-orange-500 text-2xl mr-2"><i
+                    class="fa-solid fa-jet-fighter-up w-10 text-center"></i></span>Quick Crash Courses</li>
+              <li class="text-slate-500 text-lg"> <span class="text-orange-500 text-2xl mr-2"><i
+                    class="fa-solid fa-vial w-10 text-center"></i></span>Provided with Experimental Examples</li>
+              <li class="text-slate-500 text-lg"> <span class="text-orange-500 text-2xl mr-2"><i
+                    class="fa-solid fa-award w-10 text-center"></i></span>Certification Awarded</li>
+            </ul>
+            <button class="btn rounded-tl-3xl cmn-gradient-three slideBtn border-none">Discover New Course</button>
+          </div>
+          <div class="flex gap-5 ">
+            <img src="./assets/img/why-are-we-tabTwoImgOne.jpg" class="w-3/6 rounded-lg translate-y-12" alt="">
+            <img src="./assets/img/why-are-we-tabTwoImgTwo.jpg" class="w-3/6 rounded-lg" alt="">
+          </div>
+        </div>
+
+        <div class="why-we-are-item-three hidden grid-cols-1 lg:grid-cols-2 gap-8">
+          <div class="space-y-7">
+            <h2 class="text-4xl font-bold">The Prodigious eLearning Courses for you</h2>
+            <p class="text-xl text-slate-500 font-semibold">Join millions of people from around the world learning
+              together. Try it now!</p>
+            <ul class="space-y-2">
+              <li class="text-slate-500 text-lg"> <span class="text-orange-500 text-2xl mr-2"><i
+                    class="fa-regular fa-lightbulb w-10 text-center"></i></span> Creativity study plan</li>
+              <li class="text-slate-500 text-lg"> <span class="text-orange-500 text-2xl mr-2"><i
+                    class="fa-solid fa-jet-fighter-up w-10 text-center"></i></span>Quick Crash Courses</li>
+              <li class="text-slate-500 text-lg"> <span class="text-orange-500 text-2xl mr-2"><i
+                    class="fa-solid fa-vial w-10 text-center"></i></span>Provided with Experimental Examples</li>
+              <li class="text-slate-500 text-lg"> <span class="text-orange-500 text-2xl mr-2"><i
+                    class="fa-solid fa-award w-10 text-center"></i></span>Certification Awarded</li>
+            </ul>
+            <button class="btn rounded-tl-3xl cmn-gradient-three slideBtn border-none">Discover New Course</button>
+          </div>
+          <div class="flex gap-5 ">
+            <img src="./assets/img/why-are-we-tabThreeImgOne.jpg" class="w-3/6 rounded-lg" alt="">
+            <img src="./assets/img/why-are-we-tabThreeImgTwo.jpg" class="w-3/6 rounded-lg translate-y-12" alt="">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- animate bubble -->
+    <div class="bubble h-5 w-5 opacity-60"></div>
+    <div class="bubble h-7 w-7 bg-green-500"></div>
+    <div class="bubble h-10 w-10 opacity-50 bg-red-500"></div>
+    <div class="bubble h-14 w-14 opacity-50 bg-orange-500"></div>
+    <div class="bubble h-20 w-20 opacity-30 bg-blue-500"></div>
+    <div class="bubble h-20 w-20 opacity-50 bg-slate-600"></div>
+    <div class="bubble h-4 w-4 opacity-60"></div>
+  </section>
+
+  <!-- Counter section -->
+  <section class="counter-section py-14">
+    <div class="container max-w-7xl mx-auto">
+      <div class="counter-item-inner grid grid-cols-2 lg:grid-cols-4 gap-5">
+
+        <div
+          class="counter-item text-center py-16 px-4 rounded-lg bg-slate-100 hover:bg-orange-400 transition duration-500 group space-y-3">
+          <img src="assets/img/counterImgOne.png" class="mx-auto w-12">
+          <p class="font-bold text-3xl group-hover:text-white group-hover:transition group-hover:duration-500 number">
+            1600</p>
+          <h2 class="font-semibold text-xl group-hover:text-white group-hover:transition group-hover:duration-500">Learn
+            Anything</h2>
+        </div>
+        <div
+          class="counter-item text-center py-16 px-4 rounded-lg bg-slate-100 hover:bg-orange-400 transition duration-500 group space-y-3">
+          <img src="assets/img/counterImgTwo.png" class="mx-auto w-12">
+          <p class="font-bold text-3xl group-hover:text-white group-hover:transition group-hover:duration-500 number">
+            1900</p>
+          <h2 class="font-semibold text-xl group-hover:text-white group-hover:transition group-hover:duration-500">
+            Future Genius</h2>
+        </div>
+        <div
+          class="counter-item text-center py-16 px-4 rounded-lg bg-slate-100 hover:bg-orange-400 transition duration-500 group space-y-3">
+          <img src="assets/img/counterImgThree.png" class="mx-auto w-12">
+          <p class="font-bold text-3xl group-hover:text-white group-hover:transition group-hover:duration-500"> <span
+              class="number">500</span>+</p>
+          <h2 class="font-semibold text-xl group-hover:text-white group-hover:transition group-hover:duration-500">
+            Online Courses</h2>
+        </div>
+        <div
+          class="counter-item text-center py-16 px-4 rounded-lg bg-slate-100 hover:bg-orange-400 transition duration-500 group space-y-3">
+          <img src="assets/img/counterImgFour.png" class="mx-auto w-12">
+          <p class="font-bold text-3xl group-hover:text-white group-hover:transition group-hover:duration-500 number">
+            135</p>
+          <h2 class="font-semibold text-xl group-hover:text-white group-hover:transition group-hover:duration-500">
+            Skilled Tutors</h2>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Instructor section -->
+  <section class="instructor-section py-16">
+    <div class="container max-w-7xl mx-auto px-5 xl:px-0">
+      <div class="instructor-intro 5/6 md:4/6 lg:w-3/6 mx-auto text-center mb-12 space-y-3">
+        <p class="text-orange-500">BEST OF THE BEST</p>
+        <h2 class="text-2xl md:text-3xl lg:text-5xl font-bold">Top Online Instructor</h2>
+        <p class="text-lg text-slate-600">We'll then ask you to tell us your current level of English or invite you to
+          take our quick
+          20 minute placement test so we can make sure you start learning English.</p>
+      </div>
+
+      <div class="instructor-items">
+        <div class="owl-carousel">
+
+          <div class="card bg-base-100 shadow-xl">
+            <figure class="relative group">
+              <img src="./assets/img/instructorOne.jpg"
+                class="scale-100 group-hover:scale-110 transition duration-300">
+              <div
+                class="group-hover:absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition duration-300">
+              </div>
+              <div class="absolute bottom-10 left-0 right-0 text-center space-x-2">
+                  <i class="fa-brands fa-github text-3xl text-orange-500 scale-150 group-hover:scale-100 translate-x-10 group-hover:translate-x-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500"></i>
+                  <i class="fa-brands fa-linkedin text-3xl text-orange-500 scale-150 group-hover:scale-100 translate-y-7 group-hover:translate-y-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500"></i>
+                  <i class="fa-brands fa-twitter text-3xl scale-150 group-hover:scale-100 text-orange-500 -translate-y-14 group-hover:translate-y-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500"></i>
+                  <i class="fa-brands fa-instagram text-3xl text-orange-500 scale-150 group-hover:scale-100 translate-x-8 group-hover:translate-x-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500"></i>
+              </div>
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Angelina May</h2>
+              <p class="text-orange-500">PHP Developer</p>
+            </div>
+          </div>
+          <div class="card bg-base-100 shadow-xl">
+            <figure class="relative group">
+              <img src="./assets/img/instructorTwo.jpg" /
+                class="scale-100 group-hover:scale-110 transition duration-300">
+              <div
+                class="group-hover:absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition duration-300">
+              </div>
+              <div class="absolute bottom-10 left-0 right-0 text-center space-x-2">
+                <i class="fa-brands fa-github text-3xl text-orange-500 scale-150 group-hover:scale-100 translate-x-10 group-hover:translate-x-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500"></i>
+                <i class="fa-brands fa-linkedin text-3xl text-orange-500 scale-150 group-hover:scale-100 translate-y-7 group-hover:translate-y-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500"></i>
+                <i class="fa-brands fa-twitter text-3xl scale-150 group-hover:scale-100 text-orange-500 -translate-y-14 group-hover:translate-y-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500"></i>
+                <i class="fa-brands fa-instagram text-3xl text-orange-500 scale-150 group-hover:scale-100 translate-x-8 group-hover:translate-x-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500"></i>
+            </div>
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Tina Brown</h2>
+              <p class="text-orange-500">React Developer</p>
+            </div>
+          </div>
+          <div class="card bg-base-100 shadow-xl">
+            <figure class="relative group">
+              <img src="./assets/img/instructorThree.jpg" /
+                class="scale-100 group-hover:scale-110 transition duration-300">
+              <div
+                class="group-hover:absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition duration-300">
+              </div>
+              <div class="absolute bottom-10 left-0 right-0 text-center space-x-2">
+                <i class="fa-brands fa-github text-3xl text-orange-500 scale-150 group-hover:scale-100 translate-x-10 group-hover:translate-x-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500"></i>
+                <i class="fa-brands fa-linkedin text-3xl text-orange-500 scale-150 group-hover:scale-100 translate-y-7 group-hover:translate-y-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500"></i>
+                <i class="fa-brands fa-twitter text-3xl scale-150 group-hover:scale-100 text-orange-500 -translate-y-14 group-hover:translate-y-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500"></i>
+                <i class="fa-brands fa-instagram text-3xl text-orange-500 scale-150 group-hover:scale-100 translate-x-8 group-hover:translate-x-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500"></i>
+            </div>
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Peter Oldy</h2>
+              <p class="text-orange-500">Java Developer</p>
+            </div>
+          </div>
+          <div class="card bg-base-100 shadow-xl">
+            <figure class="relative group">
+              <img src="./assets/img/instructorFour.jpg" /
+                class="scale-100 group-hover:scale-110 transition duration-300">
+              <div
+                class="group-hover:absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition duration-300">
+              </div>
+              <div class="absolute bottom-10 left-0 right-0 text-center space-x-2">
+                <i class="fa-brands fa-github text-3xl text-orange-500 scale-150 group-hover:scale-100 translate-x-10 group-hover:translate-x-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500"></i>
+                <i class="fa-brands fa-linkedin text-3xl text-orange-500 scale-150 group-hover:scale-100 translate-y-7 group-hover:translate-y-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500"></i>
+                <i class="fa-brands fa-twitter text-3xl scale-150 group-hover:scale-100 text-orange-500 -translate-y-14 group-hover:translate-y-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500"></i>
+                <i class="fa-brands fa-instagram text-3xl text-orange-500 scale-150 group-hover:scale-100 translate-x-8 group-hover:translate-x-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500"></i>
+            </div>
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Christina Chi</h2>
+              <p class="text-orange-500">Psychologist</p>
+            </div>
+          </div>
+          <div class="card bg-base-100 shadow-xl">
+            <figure class="relative group">
+              <img src="./assets/img/instructorFive.jpg" /
+                class="scale-100 group-hover:scale-110 transition duration-300">
+              <div
+                class="group-hover:absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition duration-300">
+              </div>
+              <div class="absolute bottom-10 left-0 right-0 text-center space-x-2">
+                <i class="fa-brands fa-github text-3xl text-orange-500 scale-150 group-hover:scale-100 translate-x-10 group-hover:translate-x-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500"></i>
+                <i class="fa-brands fa-linkedin text-3xl text-orange-500 scale-150 group-hover:scale-100 translate-y-7 group-hover:translate-y-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500"></i>
+                <i class="fa-brands fa-twitter text-3xl scale-150 group-hover:scale-100 text-orange-500 -translate-y-14 group-hover:translate-y-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500"></i>
+                <i class="fa-brands fa-instagram text-3xl text-orange-500 scale-150 group-hover:scale-100 translate-x-8 group-hover:translate-x-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500"></i>
+            </div>
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Linda Felc</h2>
+              <p class="text-orange-500">Teacher of English</p>
+            </div>
+          </div>
+          <div class="card bg-base-100 shadow-xl">
+            <figure class="relative group">
+              <img src="./assets/img/instructorSix.jpg" /
+                class="scale-100 group-hover:scale-110 transition duration-300">
+              <div
+                class="group-hover:absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition duration-300">
+              </div>
+              <div class="absolute bottom-10 left-0 right-0 text-center space-x-2">
+                <i class="fa-brands fa-github text-3xl text-orange-500 scale-150 group-hover:scale-100 translate-x-10 group-hover:translate-x-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500"></i>
+                <i class="fa-brands fa-linkedin text-3xl text-orange-500 scale-150 group-hover:scale-100 translate-y-7 group-hover:translate-y-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500"></i>
+                <i class="fa-brands fa-twitter text-3xl scale-150 group-hover:scale-100 text-orange-500 -translate-y-14 group-hover:translate-y-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500"></i>
+                <i class="fa-brands fa-instagram text-3xl text-orange-500 scale-150 group-hover:scale-100 translate-x-8 group-hover:translate-x-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500"></i>
+            </div>
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Chris Nolan</h2>
+              <p class="text-orange-500">Bootcamp Instructor</p>
+            </div>
+          </div>
+          <div class="card bg-base-100 shadow-xl">
+            <figure class="relative group">
+              <img src="./assets/img/instructorSeven.jpg" /
+                class="scale-100 group-hover:scale-110 transition duration-300">
+              <div
+                class="group-hover:absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition duration-300">
+              </div>
+              <div class="absolute bottom-10 left-0 right-0 text-center space-x-2">
+                <i class="fa-brands fa-github text-3xl text-orange-500 scale-150 group-hover:scale-100 translate-x-10 group-hover:translate-x-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500"></i>
+                <i class="fa-brands fa-linkedin text-3xl text-orange-500 scale-150 group-hover:scale-100 translate-y-7 group-hover:translate-y-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500"></i>
+                <i class="fa-brands fa-twitter text-3xl scale-150 group-hover:scale-100 text-orange-500 -translate-y-14 group-hover:translate-y-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500"></i>
+                <i class="fa-brands fa-instagram text-3xl text-orange-500 scale-150 group-hover:scale-100 translate-x-8 group-hover:translate-x-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500"></i>
+            </div>
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Miranda Stoun</h2>
+              <p class="text-orange-500">Business Mentor</p>
+            </div>
+          </div>
+          <div class="card bg-base-100 shadow-xl">
+            <figure class="relative group">
+              <img src="./assets/img/instructorEight.jpg" /
+                class="scale-100 group-hover:scale-110 transition duration-300">
+              <div
+                class="group-hover:absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition duration-300">
+              </div>
+              <div class="absolute bottom-10 left-0 right-0 text-center space-x-2">
+                <i class="fa-brands fa-github text-3xl text-orange-500 scale-150 group-hover:scale-100 translate-x-10 group-hover:translate-x-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500"></i>
+                <i class="fa-brands fa-linkedin text-3xl text-orange-500 scale-150 group-hover:scale-100 translate-y-7 group-hover:translate-y-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500"></i>
+                <i class="fa-brands fa-twitter text-3xl scale-150 group-hover:scale-100 text-orange-500 -translate-y-14 group-hover:translate-y-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500"></i>
+                <i class="fa-brands fa-instagram text-3xl text-orange-500 scale-150 group-hover:scale-100 translate-x-8 group-hover:translate-x-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500"></i>
+            </div>
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Jordan Smith</h2>
+              <p class="text-orange-500">Teacher of Chamistry</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ section -->
+  <section
+    class="relative faq-section h-screen w-full bg-[url('./assets/img/faqThree.jpg')] bg-center bg-cover bg-slate-700 bg-blend-overlay">
+    <div class="container max-w-7xl mx-auto px-5 xl:px-0">
+
+      <div class="faq-inner z-50 flex gap-0 lg:gap-5">
+        <div class="faq-left w-0 xl:w-3/6"> </div>
+
+        <div
+          class="faq-right mx-auto w-5/6 xl:w-3/6 flex flex-col gap-3 items-center justify-center h-auto lg:h-screen">
+          <div class="collapse collapse-plus w-5/6 rounded-lg">
+            <input type="checkbox" class="peer" />
+            <!-- <button class="btn rounded-tl-3xl cmn-gradient-three slideBtn border-none">Learn now</button> -->
+            <div
+              class="collapse-title cmn-gradient-three text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content font-bold">
+              01. Great Online Instructor
+            </div>
+            <div
+              class="collapse-content cmn-gradient-three text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
+              <p>Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Ut labore et dolore
+                magna aliqua. Ut enim ad minim veniam</p>
+            </div>
+          </div>
+          <div class="collapse collapse-plus w-5/6 rounded-lg">
+            <input type="checkbox" class="peer" />
+            <div
+              class="collapse-title cmn-gradient-three text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content font-bold">
+              02. Get iGuru certified award
+            </div>
+            <div
+              class="collapse-content cmn-gradient-three text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
+              <p>I am text block. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+            </div>
+          </div>
+          <div class="collapse collapse-plus w-5/6 rounded-lg">
+            <input type="checkbox" class="peer" />
+            <div
+              class="collapse-title cmn-gradient-three text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content font-bold">
+              03. Exclusive Course Materials
+            </div>
+            <div
+              class="collapse-content cmn-gradient-three text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
+              <p>I am text block. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+            </div>
+          </div>
+          <div class="collapse collapse-plus w-5/6 rounded-lg">
+            <input type="checkbox" class="peer" />
+            <div
+              class="collapse-title cmn-gradient-three text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content font-bold">
+              04. In-Depth Curse Analysis
+            </div>
+            <div
+              class="collapse-content cmn-gradient-three text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
+              <p>I am text block. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="bubble h-5 w-5 opacity-60"></div>
+      <div class="bubble h-7 w-7"></div>
+      <div class="bubble h-10 w-10 opacity-50"></div>
+      <div class="bubble h-20 w-20 opacity-30"></div>
+      <div class="bubble h-32 w-32 opacity-40"></div>
+      <div class="bubble h-4 w-4 opacity-60"></div>
+
+    </div>
+  </section>
+
+  <!-- Dictionary -->
+  <div class="dictionary py-16 bg-slate-800 text-slate-50 relative">
+    <div class="container max-w-7xl mx-auto">
+      <div class="dictionary-intro w-5/6 lg:w-4/6 xl:w-3/6 mb-10">
+        <h2 class="font-bold text-3xl">"I was reading the dictionary. I thought
+          it was a poem about everything."</h2>
+        <p class="fon-semibold text-lg text-slate-300">-Steven Wright</p>
+      </div>
+      <div class="dictionary-inner">
+        <div class="dictionary-search mb-5 text-center">
+          <input type="text" placeholder="search any word"
+            class="border-none focus:outline-none py-3 px-2 rounded-lg shadow-lg text-slate-800 font-bold"
+            id="dictionary-search-inp">
+          <button class="px-5 py-3 rounded-lg shadow-xl bg-orange-500" id="dictionary-search-btn">Search</button>
+        </div>
+
+        <div class="dictionary-body text-xl font-semibold space-y-4 pb-10">
+        </div>
+
+      </div>
+    </div>
+    <div class="bubble h-5 w-5 opacity-60"></div>
+    <div class="bubble h-7 w-7 bg-green-500"></div>
+    <div class="bubble h-10 w-10 opacity-50 bg-red-500"></div>
+    <div class="bubble h-10 w-10 opacity-40 bg-yellow-500"></div>
+    <div class="bubble h-20 w-20 opacity-30 bg-blue-500"></div>
+    <div class="bubble h-20 w-20 opacity-50 bg-slate-800"></div>
+    <div class="bubble h-4 w-4 opacity-60 bg-slate-200"></div>
+  </div>
+
+  <!-- Trending Category -->
+  <section class="trending-section py-16">
+    <div class="container max-w-7xl mx-auto px-5 xl:px-0">
+      <div class="trending-intro 5/6 md:4/6 lg:w-3/6 mx-auto text-center mb-12 space-y-3">
+        <p class="text-orange-500">Browse Top</p>
+        <h2 class="text-2xl md:text-3xl lg:text-5xl font-bold">Trending Categories</h2>
+        <p class="text-lg text-slate-600">We'll then ask you to tell us your current level of English or invite you to
+          take our quick
+          20 minute placement test so we can make sure you start learning English.</p>
+      </div>
+
+      <div class="trending-items">
+        <div class="owl-carousel">
+
+          <div
+            class="card h-60 shadow-xl  bg-[url('./assets/img/trendingCourseEnglish.jpg')] bg-center bg-cover bg-slate-600 hover:bg-slate-700 bg-blend-overlay group">
+            <div class="absolute bottom-10 left-0 right-0 text-center">
+              <h2
+                class="text-slate-50 font-bold text-2xl -translate-x-7 group-hover:translate-x-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500">
+                English</h2>
+              <div
+                class="rating translate-x-7 group-hover:translate-x-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500">
+                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
+                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                <input type="radio" name="rating-2"
+                  class="mask mask-star-2 bg-orange-400 opacity-60 checked:opacity-100" />
+              </div>
+            </div>
+          </div>
+          <div
+            class="card h-60 shadow-xl  bg-[url('./assets/img/trendingCourseGeography.jpg')] bg-center bg-cover bg-slate-600 hover:bg-slate-700 bg-blend-overlay group">
+            <div class="absolute bottom-10 left-0 right-0 text-center">
+              <h2
+                class="text-slate-50 font-bold text-2xl -translate-x-7 group-hover:translate-x-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500">
+                Geography</h2>
+              <div
+                class="rating translate-x-7 group-hover:translate-x-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500">
+                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
+                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                <input type="radio" name="rating-2"
+                  class="mask mask-star-2 bg-orange-400 opacity-60 checked:opacity-100" />
+              </div>
+            </div>
+          </div>
+          <div
+            class="card h-60 shadow-xl  bg-[url('./assets/img/trendingCoursePsychology.jpg')] bg-center bg-cover bg-slate-600 hover:bg-slate-700 bg-blend-overlay group">
+            <div class="absolute bottom-10 left-0 right-0 text-center">
+              <h2
+                class="text-slate-50 font-bold text-2xl -translate-x-7 group-hover:translate-x-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500">
+                Psychology</h2>
+              <div
+                class="rating translate-x-7 group-hover:translate-x-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500">
+                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
+                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                <input type="radio" name="rating-2"
+                  class="mask mask-star-2 bg-orange-400 opacity-60 checked:opacity-100" />
+              </div>
+            </div>
+          </div>
+          <div
+            class="card h-60 shadow-xl  bg-[url('./assets/img/trendingCourseProgramming.jpg')] bg-center bg-cover bg-slate-600 hover:bg-slate-700 bg-blend-overlay group">
+            <div class="absolute bottom-10 left-0 right-0 text-center">
+              <h2
+                class="text-slate-50 font-bold text-2xl -translate-x-7 group-hover:translate-x-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500">
+                Programming</h2>
+              <div
+                class="rating translate-x-7 group-hover:translate-x-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500">
+                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
+                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                <input type="radio" name="rating-2"
+                  class="mask mask-star-2 bg-orange-400 opacity-60 checked:opacity-100" />
+              </div>
+            </div>
+          </div>
+          <div
+            class="card h-60 shadow-xl  bg-[url('./assets/img/trendingCourseGraphicDesign.jpg')] bg-center bg-cover bg-slate-600 hover:bg-slate-700 bg-blend-overlay group">
+            <div class="absolute bottom-10 left-0 right-0 text-center">
+              <h2
+                class="text-slate-50 font-bold text-2xl -translate-x-7 group-hover:translate-x-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500">
+                Graphic Design</h2>
+              <div
+                class="rating translate-x-7 group-hover:translate-x-0 opacity-0 group-hover: group-hover:opacity-100 transition duration-500">
+                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
+                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                <input type="radio" name="rating-2"
+                  class="mask mask-star-2 bg-orange-400 opacity-60 checked:opacity-100" />
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Delever Result -->
+  <section class="delever-result bg-slate-900 text-slate-50 py-16">
+    <div class="container max-w-7xl mx-auto">
+      <div class="delever-result-intro text-center w-5/6 lg:w-4/6 xl:w-3/6 mx-auto space-y-3">
+        <h2 class="font-bold text-4xl">We Delever Real Results</h2>
+        <p class="text-slate-200">Check back most work-days for new lessons on your favorite web technologies and
+          techniques.</p>
+      </div>
+      <div class="delever-result-items grid grid-cols-3 gap-7 mt-16">
+        <div class="delever-result-item text-center space-y-3 px-4 border py-12 rounded-lg group">
+          <img src="./assets/img/real-result-icon-1.png"
+            class="mx-auto w-16 group-hover:skew-y-12 group-hover:rotate-6 transition duration-500">
+          <h2 class="text-2xl font-bold">Learn on your own Schedule</h2>
+          <p>It is a long established fact that a reader will be distracted by the read when looking at its layout</p>
+        </div>
+        <div class="delever-result-item text-center space-y-3 px-4 border py-12 rounded-lg group">
+          <img src="./assets/img/real-result-icon-2.png"
+            class="mx-auto w-16 group-hover:skew-y-12 group-hover:rotate-6 transition duration-500">
+          <h2 class="text-2xl font-bold">Find courses on any topic</h2>
+          <p>Prepare for in-demand industry certifications with courses, virtual labs, and practice tests.</p>
+        </div>
+        <div class="delever-result-item text-center space-y-3 px-4 border py-12 rounded-lg group">
+          <img src="./assets/img/real-result-icon-3.png"
+            class="mx-auto w-16 group-hover:skew-y-12 group-hover:rotate-6 transition duration-500">
+          <h2 class="text-2xl font-bold">Learn from experts with low cost</h2>
+          <p>Get the hands-on experience businesses are looking for with hundreds of virtual labs</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video section -->
+  <section id="video-section" class="p-14 text-center space-y-5">
+    <h2 class="text-5xl font-bold">Quick <span class="text-orange-500">summary</span> of our platform!</h2>
+    <div class="videos flex justify-center">
+      <div class="video-wrapper">
+        <video id="video1" controls class="rounded-lg shadow-lg" poster="./assets/img/videoThumnailOne.jpg">
+          <source src="./assets/video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="video-wrapper">
+        <video id="video2" controls class="rounded-lg shadow-lg" poster="./assets/img/videoThumnailTwo.jpg">
+          <source src="./assets/video.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- footer -->
+  <footer id="footer" class="footer bg-slate-800 p-10 bg-base-200 text-base-content py-12 text-slate-50 text-lg">
+    <div>
+      <img src="./assets/img/logo-light.png" class="w-20">
+      <p><span class="text-orange-500">Address:</span> 27 Division St, New York, NY 10002, USA</p>
+      <p><span class="text-orange-500">Email:</span> iguru@mail.com</p>
+      <p><span class="text-orange-500">Phone:</span> 507-452-1254</p>
+      <ul class="flex gap-3">
+        <li><a href="#"><i class="fa-brands fa-facebook-f hover:text-orange-500 transition hover:scale-125"></i></a>
+        </li>
+        <li><a href="#"><i class="fa-brands fa-github hover:text-orange-500 transition hover:scale-125"></i></a></li>
+        <li><a href="#"><i class="fa-brands fa-linkedin hover:text-orange-500 transition hover:scale-125"></i></a></li>
+        <li><a href="#"><i class="fa-brands fa-twitter hover:text-orange-500 transition hover:scale-125"></i></a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="font-semibold text-orange-400 text-lg">Services</span>
+      <a class="cursor-pointer hover:text-orange-500 transition hover:scale-105">Branding</a>
+      <a class="cursor-pointer hover:text-orange-500 transition hover:scale-105">Design</a>
+      <a class="cursor-pointer hover:text-orange-500 transition hover:scale-105">Marketing</a>
+      <a class="cursor-pointer hover:text-orange-500 transition hover:scale-105">Advertisement</a>
+    </div>
+    <div>
+      <span class="font-semibold text-orange-400 text-lg">Legal</span>
+      <a class="cursor-pointer hover:text-orange-500 transition hover:scale-105">Terms of use</a>
+      <a class="cursor-pointer hover:text-orange-500 transition hover:scale-105">Privacy policy</a>
+      <a class="cursor-pointer hover:text-orange-500 transition hover:scale-105">Cookie policy</a>
+    </div>
+    <div>
+      <span class="font-semibold text-orange-400 text-lg">Newsletter</span>
+      <div class="form-control w-80">
+        <label class="label">
+          <span class="label-text text-slate-50 text-lg">Enter your email address</span>
+        </label>
+        <div class="relative">
+          <input type="text" placeholder="utsho926@gmail.com" class="input input-bordered w-full pr-16 text-slate-800" />
+          <button class="btn cmn-gradient-three absolute top-0 right-0 rounded-l-none">Subscribe</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <footer class="footer footer-center p-4 bg-base-300 text-base-content bg-slate-900 text-slate-50 text-lg">
+    <div>
+      <h2 class="inline-block">Copyright © 2023 - All right reserved by <strong
+          class="text-orange-500 font-semibold text-xl inline-block">Source_Code_007</strong></>
+    </div>
+  </footer>
+
+
+  <!-- JS -->
+  <script src="./js/script.js"></script>
+
+  <!-- OWL Carousel JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".owl-carousel").owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: false,
+        responsive: {
+          0: {
+            items: 1
+          },
+          600: {
+            items: 3
+          },
+          1000: {
+            items: 4
+          }
+        }
+      });
+    });
+  </script>
+
+  <!-- counter up jquery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+  <script>
+    $(".number").counterUp({ time: 2000 });
+  </script>
+
+</body>
+
+</html>

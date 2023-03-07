@@ -1,0 +1,112 @@
+html{
+  scroll-behavior: smooth;
+}
+/* common font */
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Montserrat', sans-serif;
+}
+p,a,span,body{
+  font-family: 'Quicksand', sans-serif;
+
+}
+
+/* cmn gradient */
+.cmn-gradient-one{
+    background-image: radial-gradient(circle farthest-corner at 12.3% 19.3%, rgba(95, 209, 249, 1) 0%, rgba(85, 88, 218, 1) 100.2%);
+}
+.cmn-gradient-one.slideBtn:hover{
+    background-image: radial-gradient(circle farthest-corner at 12.3% 19.3%, rgba(85, 88, 218, 1) 0%, rgba(95, 209, 249, 1) 100.2%);
+}
+.cmn-gradient-three{
+  background: -webkit-linear-gradient(to right, #fc4a1a, #f7b733); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #fc4a1a, #f7b733); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.cmn-gradient-three.slideBtn:hover{
+  background: -webkit-linear-gradient(to right, #f7b733, #fc4a1a); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #f7b733, #fc4a1a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/* default preloader */
+#preloader{
+  height: 100vh;
+  width: 100%;
+  background: #222222 url(../assets/img/preloaderOne.gif) no-repeat center;
+   display: flex; 
+   justify-content: center; 
+   align-items: center;
+  position: fixed;
+  z-index: 999;
+}
+
+/* horizontal indicator bar */
+#indicator-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    z-index: 9999;
+    transition: width 0.2s ease-out;
+}
+
+/* animation from left and right */
+.animated-from-left {
+  opacity: 0; 
+  position: absolute; 
+  animation: slide-in-left 2s forwards; 
+}
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-170px); 
+    opacity: 0;
+  }
+  30%{
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0); 
+    opacity: 1;
+    position: static; 
+  }
+}
+
+.animated-from-right {
+  opacity: 0; 
+  position: absolute;
+  animation: slide-in-right 2s forwards; 
+}
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(170px); 
+    opacity: 0;
+  }
+  30%{
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0); 
+    opacity: 1; 
+    position: static; 
+  }
+}
+
+
+
+
+/* style for bubble */
+.bubble {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: orangered;
+  opacity: .3;
+  border-radius: 50%;
+  transition: 20s;
+  transform: scale(0);
+  pointer-events: none;
+}
+
+/* video section */
+.video-wrapper {
+  width: 40%;
+  margin: 20px;
+}
